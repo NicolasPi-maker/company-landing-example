@@ -1,0 +1,27 @@
+---
+import ActionBtn from "../shared/ActionBtn.astro";
+import MobileHeroCta from "./components/MobileHeroCta.astro";
+import DesktopHeroCta from "./components/DesktopHeroCta.astro";
+const title = 'The Future of Manufacturing with';
+const titleCta = "Latest Technology"
+const description = 'Expert tech to elevate your manufacturing. Let\'s take your business further.';
+---
+
+<div class="flex flex-col gap-8 flex-1  relatives p-2 my-8">
+    <section class=" w-full xl:w-2/3 mx-auto flex flex-col gap-6 items-center justify-center text-center">
+        <h1 class="text-4xl md:text-6xl font-bold text-gray-800">{ title }<span class="text-primary"> { titleCta } </span></h1>
+        <p class="opacity-45 w-3/4">{ description }</p>
+        <div class="flex gap-4">
+            <ActionBtn variant="primary" label="Get Started" />
+            <ActionBtn variant="secondary" label="Try Demo" />
+        </div>
+    </section>
+    <section class="flex-1">
+        <div class="md:hidden">
+            <MobileHeroCta  />
+        </div>
+        <div class="hidden md:flex">
+            <DesktopHeroCta />
+        </div>
+    </section>
+</div>

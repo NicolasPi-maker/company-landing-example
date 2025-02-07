@@ -1,0 +1,19 @@
+---
+const { variant = 'primary', label } = Astro.props;
+
+const setVariant = (variant) => {
+  switch (variant) {
+    case 'primary':
+      return 'bg-primary text-white text-opacity-90';
+    case 'secondary':
+      return 'bg-white border text-primary';
+      case 'cta':
+        return 'bg-cta text-primary';
+    default:
+      return 'bg-primary text-white';
+  }
+}
+---
+<button type="button" class=`${setVariant(variant)} rounded-full px-6 py-2`>
+  { label }
+</button>

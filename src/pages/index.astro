@@ -1,11 +1,97 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import { Image } from "astro:assets";
 import Layout from '../layouts/Layout.astro';
+import MobileNav from "../components/nav/MobileNav.astro";
+import Hero from "../components/hero/Hero.astro";
+import SaleInterface from "../assets/img/interface-example.jpg";
+import FeatureHeader from "../components/feature/components/FeatureHeader.astro";
+import FeatureList from "../components/feature/FeatureList.astro";
+import BenefitTitle from "../components/benefits/BenefitTitle.astro";
+import BenefitList from "../components/benefits/BenefitList.astro";
+import PriceList from "../components/price/PriceList.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import ToolImg from "../assets/img/tools.webp";
+import BrandingLink from "../components/nav/components/BrandingLink.astro";
+import RessourceList from "../components/footer/RessourceList.astro";
+import DesktopNav from "../components/nav/DesktopNav.astro";
 ---
 
 <Layout>
-	<Welcome />
+	<header>
+		<nav class="min-h-screen flex flex-col bg-secondary">
+			<div class="md:hidden">
+				<MobileNav/>
+			</div>
+			<div class="hidden md:flex">
+				<DesktopNav />
+			</div>
+			<Hero />
+		</nav>
+	</header>
+	<main>
+		<section class=" benefit-wrapper p-8 md:p-16 flex flex-col items-center gap-12">
+			<FeatureHeader />
+			<FeatureList />
+		</section>
+		<section class="p-4 md:p-8 flex flex-col md:flex-row-reverse gap-6 justify-center h-1/2">
+			<div class="p-4 flex flex-col gap-6 justify-center items-center md:w-1/2">
+				<BenefitTitle />
+				<BenefitList />
+			</div>
+			<div>
+				<Image src={SaleInterface} alt="Sale Interface" class="max-w-96 h-full aspect-auto object-cover rounded-2xl"/>
+			</div>
+		</section>
+		<section class="p-8 bg-neutral-app min-h-screen flex flex-col gap-12">
+			<header class="flex flex-col text-center gap-6">
+				<h2 class=" font-bold text-white text-3xl">Tailored Palns for Your Manufacturing Sale</h2>
+				<p class="opacity-50 text-white">Flexible pricing fir any business size</p>
+			</header>
+			<div class="flex flex-col justify-center items-center">
+				<PriceList />
+			</div>
+		</section>
+		<section class="flex flex-col md:flex-row-reverse justify-center p-8 md:p-16 gap-8">
+			<Image src={ToolImg} alt="Tool Image" class="md:w-2/5 rounded-2xl object-cover aspect-auto"/>
+			<div class="flex flex-col gap-6 md:p-8 justify-center md:w-1/2">
+				<h2 class="text-2xl font-bold">Empowering Top Companies with Seamless Integrations</h2>
+				<p class="opacity-50"> Experience seamless connections with our innovative solutions designed to effortlessly integrate with your existing systems, enhance productivity, and drive your business forwards greater success.</p>
+				<button class="w-max rounded-full text-primary bg-cta py-2 px-8 font-bold">Work With Us</button>
+			</div>
+		</section>
+	</main>
+	<footer>
+		<section>
+			<div class="bg-primary justify-center items-center flex flex-col  gap-8 p-8 md:p-16 text-white">
+				<h4 class="text-3xl text-center font-bold">From Idea to Production in Days</h4>
+				<p class="opacity-50 text-center md:w-1/2">Accelerate your production with our technology. Reduce downtime and optimize costs. Get a special offer now !</p>
+				<button class="rounded-full text-primary bg-cta py-2 !px-8 font-bold">Work With us</button>
+			</div>
+		</section>
+		<section class="bg-neutral-app p-8 md:p-16 flex-col flex gap-8">
+			<div class="flex flex-col md:flex-row gap-8">
+				<div class="flex flex-col gap-4 flex-1">
+					<BrandingLink textColor="text-white" />
+					<p class="w-2/3 opacity-50 text-white text-sm">Our solutions make production faster and cheaper. Contact us for more information</p>
+				</div>
+				<RessourceList />
+			</div>
+			<span class="bg-neutral-900 w-full h-0.5"></span>
+			<div class="flex flex-col gap-4 md:flex-row text-white opacity-50 text-sm">
+				<p class="flex-1">2024 Velora, All rights reserved</p>
+				<ul class="flex flex-col md:flex-row gap-2">
+					<li>Terms & Conditions</li>
+					<li>Privacy Policy</li>
+				</ul>
+			</div>
+		</section>
+	</footer>
 </Layout>
+
+<style>
+	.benefit-wrapper {
+		background: linear-gradient(0deg, rgba(21,63,69,1) 0%, rgba(21,63,69,0.90) 100%);
+	}
+</style>
+
+

@@ -1,0 +1,38 @@
+---
+const benefitList = [
+  {
+    title: 'Boosting Quality with Tech',
+    description: 'With advanced technology, we help you achieve top product quality. Discover how we can enhance your standards.'
+  },
+  {
+    title: 'Optimization Production Process',
+    description: 'Boost factory efficiency and productivity with our optimized production process. Learn more about our services.'
+  },
+  {
+    title: 'AI-Driven Production',
+    description: 'Leverage AI to streamline your production process. Learn how we can help you integrate AI into your operations.'
+  }
+]
+---
+
+<ul class=" flex flex-col gap-6">
+  {
+    benefitList.map((benefit) => {
+      return (
+              <li class="flex gap-2">
+                  <div>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="p-1 rounded-full bg-primary text-white mt-1">
+                          <rect width="24" height="24" fill="none" />
+                          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="m5 12l5 5L20 7" />
+                      </svg>
+                  </div>
+                  <div class="flex flex-col gap-2">
+                      <h4 class="text-lg font-bold">{ benefit.title }</h4>
+                      <p class="opacity-50 text-sm">{ benefit.description }</p>
+                  </div>
+              </li>
+        )
+    })
+  }
+</ul>
+

@@ -1,0 +1,76 @@
+---
+import { Image} from "astro:assets";
+import LinkedinIcon from "../../assets/social_networks/linkedin.svg"
+import TwitterIcon from "../../assets/social_networks/twitter.svg"
+import FacebookIcon from "../../assets/social_networks/facebook.svg"
+
+const ressourceList = [
+  {
+    title: 'Company',
+    links: [
+      { name: 'About us', url: '#' },
+      { name: 'Customers', url: '#' },
+      { name: 'Newsroom', url: '#' },
+      { name: 'Events', url: '#' },
+    ],
+  },
+  {
+    title: 'Industries',
+    links: [
+      { name: 'Precision Manufacturing', url: '#' },
+      { name: 'Industrial Manufacturing', url: '#' },
+      { name: 'High Tech & electronics', url: '#' },
+      { name: 'Aerospace', url: '#' },
+    ],
+  },
+  {
+    title: 'Products',
+    links: [
+      { name: 'Manufacturing Execution System', url: '#' },
+      { name: 'Enterprise Resource Planning', url: '#' },
+      { name: 'Quality Management System', url: '#' },
+      { name: 'Supply Chain Planning', url: '#' },
+    ],
+  },
+]
+---
+
+<ul class="flex flex-col md:flex-row gap-8 text-white">
+  {
+    ressourceList.map((ressource) => {
+      return (
+        <li class="flex flex-col gap-2">
+            <h4 class="text-lg">{ ressource.title }</h4>
+            <ul class="opacity-50 text-sm flex flex-col gap-1">
+                {
+                  ressource.links.map((link) => (
+                    <li>{ link.name }</li>
+                  ))
+                }
+            </ul>
+        </li>
+      )
+    })
+  }
+  <li class="flex flex-col gap-2">
+      <h4 class="text-lg">Get in Touch</h4>
+      <a href="mailto:velora@velora.com" class="opacity-50 text-sm flex flex-col gap-1">mailto@velora.com</a>
+      <ul class="flex gap-4">
+        <li class="rounded p-1 bg-neutral-700">
+            <a href="#">
+                <Image src={LinkedinIcon} alt="Linkedin Icon"/>
+            </a>
+        </li>
+        <li class="rounded p-1 bg-neutral-700">
+            <a href="#">
+                <Image src={TwitterIcon} alt="Twitter Icon"/>
+            </a>
+        </li>
+        <li class="rounded p-1 bg-neutral-700">
+            <a href="#">
+                <Image src={FacebookIcon} alt="Facebook Icon"/>
+            </a>
+        </li>
+      </ul>
+  </li>
+</ul>

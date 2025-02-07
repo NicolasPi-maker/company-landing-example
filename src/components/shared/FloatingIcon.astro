@@ -1,0 +1,19 @@
+---
+const { variant= 'filled', position, customClass = '' } = Astro.props
+
+const setVariant = (variant) => {
+    switch (variant) {
+        case 'filled':
+            return 'bg-primary text-white';
+        case 'outlined':
+            return 'border border-primary text-primary';
+            case 'cta':
+                return 'bg-cta text-primary';
+        default:
+            return 'bg-primary text-white';
+    }
+}
+---
+<div class=`${setVariant(variant)} rounded-full absolute ${position} ${customClass}`>
+  <slot />
+</div>

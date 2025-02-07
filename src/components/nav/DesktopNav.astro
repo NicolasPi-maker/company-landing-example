@@ -1,0 +1,44 @@
+---
+import BrandingLink from "./components/BrandingLink.astro";
+
+---
+
+<div class="px-8 py-3 flex justify-between items-center shadow bg-white w-full">
+    <BrandingLink />
+    <ul class="flex gap-4">
+        <li class="nav-li transition-colors duration-300 hover:text-primary active p-1 px-3 rounded-full">
+            <a href="#" target="_self" role="navigation">Home</a>
+        </li>
+        <li class="nav-li transition-colors duration-300 hover:text-primary  p-1 px-3 rounded-full">
+            <a href="#" target="_self" role="navigation">About</a>
+        </li>
+        <li class="nav-li transition-colors duration-300 hover:text-primary  p-1 px-3 rounded-full">
+            <a href="#" target="_self" role="navigation">Services</a>
+        </li>
+        <li class="nav-li transition-colors duration-300 hover:text-primary  p-1 px-3 rounded-full">
+            <a href="#" target="_self" role="navigation">Contact</a>
+        </li>
+    </ul>
+    <button class=" text-opacity-90 py-2 px-4 bg-primary text-white rounded-full">Sign Up</button>
+</div>
+
+<style>
+    .active {
+        background-color: #153f45;
+      color: rgba(255, 255, 255, 0.9);
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const navLinks = document.querySelectorAll('.nav-li');
+        navLinks.forEach((link) => {
+            link.addEventListener('click', () => {
+                navLinks.forEach((link) => {
+                    link.classList.remove('active');
+                });
+                link.classList.add('active');
+            });
+        });
+    });
+</script>

@@ -1,0 +1,53 @@
+---
+import AssemblyIcon from "../../assets/icons/assembly.svg";
+import BoxIcon from "../../assets/icons/box.svg";
+import ShieldIcon from "../../assets/icons/shield.svg";
+import StackIcon from "../../assets/icons/stack.svg";
+import StatIcon from "../../assets/icons/stat.svg";
+import WrenchIcon from "../../assets/icons/wrench.svg";
+import FeatureCard from "./components/FeatureCard.astro";
+
+
+const benefits = [
+  {
+    icon: AssemblyIcon,
+    title: "Production and Assembly",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    icon: StackIcon,
+    title: "Custom Manufacturing",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    icon: WrenchIcon,
+    title: "Quality Control",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    icon: ShieldIcon,
+    title: "Technology and Innovation",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    icon: BoxIcon,
+    title: "Packgaging and Logistics",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    icon: StatIcon,
+    title: "Consulting Market Research",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  }
+
+]
+---
+<ul class="grid lg:grid-cols-3 gap-8">
+  {
+    benefits.map((benefit) => (
+      <li>
+        <FeatureCard icon={benefit.icon} title={benefit.title} description={benefit.description} />
+      </li>
+    ))
+  }
+</ul>
