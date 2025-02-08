@@ -17,7 +17,7 @@ import DesktopNav from "../components/nav/DesktopNav.astro";
 ---
 
 <Layout>
-	<header>
+	<header id="home">
 		<nav class="min-h-screen flex flex-col bg-secondary">
 			<div class="md:hidden">
 				<MobileNav/>
@@ -29,7 +29,7 @@ import DesktopNav from "../components/nav/DesktopNav.astro";
 		</nav>
 	</header>
 	<main>
-		<section class=" benefit-wrapper p-8 md:p-16 flex flex-col items-center gap-12">
+		<section id="services" class="benefit-wrapper p-8 md:p-16 flex flex-col items-center gap-12">
 			<FeatureHeader />
 			<FeatureList />
 		</section>
@@ -51,16 +51,16 @@ import DesktopNav from "../components/nav/DesktopNav.astro";
 				<PriceList />
 			</div>
 		</section>
-		<section class="flex flex-col md:flex-row-reverse justify-center p-8 md:p-16 gap-8">
-			<Image src={ToolImg} alt="Tool Image" class="md:w-2/5 rounded-2xl object-cover aspect-auto"/>
+		<section id="about" class="flex flex-col md:flex-row-reverse justify-center items-center m-auto p-8 md:p-16 gap-8 xl:w-3/4">
+			<Image src={ToolImg} alt="Tool Image" class="md:w-1/2 rounded-2xl object-cover aspect-auto"/>
 			<div class="flex flex-col gap-6 md:p-8 justify-center md:w-1/2">
-				<h2 class="text-2xl font-bold">Empowering Top Companies with Seamless Integrations</h2>
+				<h2 class="text-2xl xl:text-4xl font-bold">Empowering Top Companies with Seamless Integrations</h2>
 				<p class="opacity-50"> Experience seamless connections with our innovative solutions designed to effortlessly integrate with your existing systems, enhance productivity, and drive your business forwards greater success.</p>
 				<button class="w-max rounded-full text-primary bg-cta py-2 px-8 font-bold">Work With Us</button>
 			</div>
 		</section>
 	</main>
-	<footer>
+	<footer id="contact">
 		<section>
 			<div class="bg-primary justify-center items-center flex flex-col  gap-8 p-8 md:p-16 text-white">
 				<h4 class="text-3xl text-center font-bold">From Idea to Production in Days</h4>
