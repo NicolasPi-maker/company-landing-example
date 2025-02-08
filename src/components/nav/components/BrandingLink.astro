@@ -7,7 +7,7 @@ const { textColor = 'text-primary' } = Astro.props;
 ---
 <div>
     <a href="/" target="_self" role="navigation" aria-label="Velora branding logo enable to navigate to home top page" class="flex items-center gap-2">
-        <Image src={Logo} alt={companyName} width="30px" height="30px" />
+        <Image src={Logo} alt={companyName} width="35px" height="35px" class="rounded-full aspect-auto" />
         <h2 class=`text-xl font-bold ${textColor}`>{ companyName }</h2>
     </a>
 </div>
